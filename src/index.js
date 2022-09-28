@@ -5,8 +5,11 @@ import {
   Routes,
   Route,
 } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import store from './redux/configureStore';
 import './index.css';
-/* import App from './App'; */
+
+// App components
 import Navigation from './components/Nav/Nav';
 import MyMission from './components/Mission/Mission ';
 import MyProfile from './components/Profile';
@@ -16,12 +19,14 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <Navigation />
-      <Routes>
-        <Route path="/" element={<MyRockets />} />
-        <Route path="/mission" element={<MyMission />} />
-        <Route path="/myProfile" element={<MyProfile />} />
-      </Routes>
+      <Provider store={store}>
+        <Navigation />
+        <Routes>
+          <Route path="/" element={<MyRockets />} />
+          <Route path="/mission" element={<MyMission />} />
+          <Route path="/myProfile" element={<MyProfile />} />
+        </Routes>
+      </Provider>
     </BrowserRouter>
   </React.StrictMode>,
 );
