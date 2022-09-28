@@ -1,7 +1,7 @@
 import React from 'react';
 import { Table } from 'react-bootstrap';
 
-const Mission = () => (
+const MyMission = () => (
   <>
     <Table striped bordered hover size="lg" className="container my-5">
       <thead>
@@ -45,4 +45,4 @@ const Mission = () => (
   </>
 );
 
-export default Mission;
+export default MyMission;
