@@ -2,7 +2,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { NavLink } from 'react-router-dom';
-import Logo from './world.png';
+import Logo from '../images/world.png';
 
 function Navigation() {
   const activeLink = ({ isActive }) => ({
@@ -10,6 +10,27 @@ function Navigation() {
     paddingBottom: isActive ? '0.25rem' : '',
     borderBottom: isActive ? '3px solid #0d6efd' : '',
   });
+
+  const links = [
+    {
+      id: 1,
+      path: '/',
+      Text: 'Rockets',
+      href: '#rockets',
+    },
+    {
+      id: 2,
+      path: '/mission',
+      Text: 'Missions',
+      href: '#missions',
+    },
+    {
+      id: 3,
+      path: '/myProfile',
+      Text: 'My Profile',
+      href: '#profile',
+    },
+  ];
 
   return (
     <Navbar bg="light" expand="lg" className="border-bottom py-3">
@@ -21,15 +42,12 @@ function Navigation() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
-            <Nav.Link href="#rockets">
-              <NavLink style={activeLink} className="text-primary link" to="/">Rockets</NavLink>
-            </Nav.Link>
-            <Nav.Link href="#missions">
-              <NavLink style={activeLink} className="text-primary link" to="/mission">Missions</NavLink>
-            </Nav.Link>
-            <Nav.Link href="#myProfile">
-              <NavLink style={activeLink} className="text-primary link" to="/myProfile">My Profile</NavLink>
-            </Nav.Link>
+            {links.map((nlink) => (
+            // eslint-disable-next-line
+           <Nav.Link href={nlink.href}>
+             <NavLink style={activeLink} className="text-primary link" to={nlink.path}>{nlink.Text}</NavLink>
+           </Nav.Link>
+            ))}
           </Nav>
         </Navbar.Collapse>
       </Container>
