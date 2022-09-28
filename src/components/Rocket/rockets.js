@@ -1,29 +1,18 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { Container } from 'react-bootstrap';
 import RocketItemsList from './rocklist';
-import rocketimg from '../images/rockets-image.jpg';
+import { fetchingRocketsInfo } from '../../redux/rocketredux/rcktreducer';
+import './Rocket.css';
 
 const MyRockets = () => {
-  const [rockets] = useState([
-    {
-      id: 1,
-      name: 'Falcon 1',
-      description: 'This is the largest rocket.',
-      images: rocketimg,
-    },
-    {
-      id: 2,
-      name: 'Falcon 2',
-      description: 'This is the largest rocket.',
-      images: rocketimg,
-    },
-    {
-      id: 3,
-      name: 'Falcon 3',
-      description: 'This is the faster rocket.',
-      images: rocketimg,
-    },
-  ]);
+  const rockets = useSelector((state) => state.rockets);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchingRocketsInfo());
+  }, []);
 
   return (
     <Container>

@@ -1,15 +1,23 @@
 import React from 'react';
-import PropTypes, { Array } from 'prop-types';
+import PropTypes, { Object } from 'prop-types';
 import RocketCardItem from './rocketcard';
 
-const RocketItemsList = ({ rockets }) => (
-  <ul>
-    {rockets.map((rocket) => <RocketCardItem key={rocket.id} rocket={rocket} />)}
-  </ul>
-);
+const RocketItemsList = (props) => {
+  const { rockets } = props;
+
+  return (
+    <ul>
+      { rockets.map((rocket) => <RocketCardItem key={rocket.id} rocket={rocket} />)}
+    </ul>
+  );
+};
+
+RocketItemsList.defaultProps = {
+  rockets: [],
+};
 
 RocketItemsList.propTypes = {
-  rockets: PropTypes.instanceOf(Array).isRequired,
+  rockets: PropTypes.instanceOf(Object),
 };
 
 export default RocketItemsList;
