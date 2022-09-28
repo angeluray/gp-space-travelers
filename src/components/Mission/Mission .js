@@ -20,9 +20,9 @@ function Mission() {
       <Table striped bordered hover size="lg" className="container my-5">
         <thead>
           <tr>
-            <th>mission</th>
-            <th>description</th>
-            <th>dtatus</th>
+            <th>Mission</th>
+            <th>Description</th>
+            <th>Status</th>
           </tr>
         </thead>
         <tbody>
