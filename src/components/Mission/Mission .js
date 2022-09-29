@@ -34,7 +34,7 @@ function MyMission() {
             <tr key={mission.id}>
               <td>{mission.name}</td>
               <td>{mission.description}</td>
-              <td>
+              <td className="myBtn">
                 {!mission.canceled ? (
                   <div className="btns">
                     <tr className="d-flex">
