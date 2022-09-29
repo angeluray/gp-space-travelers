@@ -3,10 +3,14 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Table, Container } from 'react-bootstrap';
 import { getMissionsData, JoinMission } from '../../redux/mission/mission';
 
-function Mission() {
+let savedMissions = false;
+function MyMission() {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getMissionsData());
+    if (savedMissions === false) {
+      savedMissions = true;
+      dispatch(getMissionsData());
+    }
   }, [dispatch, getMissionsData]);
   const missions = useSelector((state) => state.mission);
 
@@ -76,4 +80,4 @@ function Mission() {
   );
 }
 
-export default Mission;
+export default MyMission;
