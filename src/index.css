@@ -11,7 +11,7 @@
 }
 
 .content {
-  padding-top: 0px !important;
+  padding-top: 0 !important;
 }
 
 #mylink3 {
@@ -24,7 +24,7 @@
   width: 300px;
   height: 250px;
 }
-  
+
 .reserved {
   margin-right: 7px;
   background-color: #20a2b6 !important;
