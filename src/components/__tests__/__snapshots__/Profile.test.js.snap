@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Check MyProfile renders correctly 1`] = `
+<div
+  className="d-flex justify-content-center mt-5 container"
+>
+  <div
+    className="w-25 me-5 list-group"
+    onKeyDown={[Function]}
+  >
+    <h2>
+      My Missions
+    </h2>
+    <p
+      className="text-danger"
+    >
+      You haven't select any mission yet
+    </p>
+  </div>
+  <div
+    className="w-25 list-group"
+    onKeyDown={[Function]}
+  >
+    <h2>
+      My Rockets
+    </h2>
+    <p
+      className="text-danger"
+    >
+      You haven't select any rocket yet
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Test MyProfile renders correctly 1`] = `
+<div
+  className="d-flex justify-content-center mt-5 container"
+>
+  <div
+    className="w-25 me-5 list-group"
+    onKeyDown={[Function]}
+  >
+    <h2>
+      My Missions
+    </h2>
+    <p
+      className="text-danger"
+    >
+      You haven't select any mission yet
+    </p>
+  </div>
+  <div
+    className="w-25 list-group"
+    onKeyDown={[Function]}
+  >
+    <h2>
+      My Rockets
+    </h2>
+    <p
+      className="text-danger"
+    >
+      You haven't select any rocket yet
+    </p>
+  </div>
+</div>
+`;

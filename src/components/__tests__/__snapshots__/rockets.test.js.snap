@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test RocketContainer renders correctly 1`] = `
+<div
+  className="container"
+>
+  <ul />
+</div>
+`;
