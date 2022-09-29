@@ -5,10 +5,9 @@ import { NavLink } from 'react-router-dom';
 import Logo from '../images/world.png';
 
 function Navigation() {
-  const activeLink = ({ isActive }) => ({
-    color: isActive ? '#0d6efd' : '',
-    paddingBottom: isActive ? '0.25rem' : '',
-    borderBottom: isActive ? '3px solid #0d6efd' : '',
+  const myNavLinksEffect = ({ isActive }) => ({
+    textDecoration: isActive ? 'underline solid #0d8efd' : 'none',
+    color: isActive ? '#0d8efd' : '#0d8dfd98',
   });
 
   const links = [
@@ -37,15 +36,15 @@ function Navigation() {
       <Container>
         <Navbar.Brand href="#home" className="d-flex">
           <img src={Logo} alt="Logo" className="logo" />
-          <h2 className="ps-3">Space-Travelers-Hub</h2>
+          <h2 className="ps-3">Space Travelers&apos; Hub</h2>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
             {links.map((nlink) => (
             // eslint-disable-next-line
-           <Nav.Link href={nlink.href}>
-             <NavLink style={activeLink} className="text-primary link" to={nlink.path}>{nlink.Text}</NavLink>
+           <Nav.Link>
+             <NavLink style={myNavLinksEffect} id={`mylink${nlink.id}`} className="text-primary link" to={nlink.path} end>{nlink.Text}</NavLink>
            </Nav.Link>
             ))}
           </Nav>

@@ -3,15 +3,18 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Container } from 'react-bootstrap';
 import RocketItemsList from './rocklist';
 import { fetchingRocketsInfo } from '../../redux/rocketredux/rcktreducer';
-import './Rocket.css';
 
+let saveReserve = false;
 const MyRockets = () => {
   const rockets = useSelector((state) => state.rockets);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchingRocketsInfo());
+    if (saveReserve === false) {
+      saveReserve = true;
+      dispatch(fetchingRocketsInfo());
+    }
   }, []);
 
   return (

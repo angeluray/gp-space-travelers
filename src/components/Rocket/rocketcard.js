@@ -12,9 +12,8 @@ const RocketCardItem = (props) => {
 
   const dispatch = useDispatch();
 
-  const reserveClickEvent = ({ target }) => {
-    const { id } = target;
-    dispatch(reserveRocket(id));
+  const reserveClickEvent = (e) => {
+    dispatch(reserveRocket(e.target.id));
   };
 
   return (
@@ -26,7 +25,7 @@ const RocketCardItem = (props) => {
         {!reserved ? (
           <>
             <p>{description}</p>
-            <Button id={id} type="button" variant="primary" onClick={reserveClickEvent}>Reserve Rocket</Button>
+            <Button id={id} type="button" variant="primary" onClick={(e) => reserveClickEvent(e)}>Reserve Rocket</Button>
           </>
         ) : (
           <>
