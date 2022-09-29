@@ -1,48 +1,79 @@
-import React from 'react';
-import { Table } from 'react-bootstrap';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { Table, Container } from 'react-bootstrap';
+import { getMissionsData, JoinMission } from '../../redux/mission/mission';
 
-const MyMission = () => (
-  <>
-    <Table striped bordered hover size="lg" className="container my-5">
-      <thead>
-        <tr>
-          <th>Mission</th>
-          <th>Description</th>
-          <th>Status</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Mark</td>
-          <td>Otto</td>
-          <div className="btns">
-            <tr>
-              <button type="button" className="btn btn-secondary ms-3">
-                NOT A MEMBER
-              </button>
-              <button type="button" className="btn btn-outline-dark ms-3">
-                Join Mission
-              </button>
-            </tr>
-          </div>
-        </tr>
-        <tr>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <div className="btns">
-            <tr>
-              <button type="button" className="btn btn-info ms-3">
-                NOT A MEMBER
-              </button>
-              <button type="button" className="btn btn-outline-danger ms-3">
-                Join Mission
-              </button>
-            </tr>
-          </div>
-        </tr>
-      </tbody>
-    </Table>
-  </>
-);
+function Mission() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getMissionsData());
+  }, [dispatch, getMissionsData]);
+  const missions = useSelector((state) => state.mission);
 
-export default MyMission;
+  const handleJoinMission = ({ target }) => {
+    const { id } = target;
+    dispatch(JoinMission(id));
+  };
+
+  return (
+    <Container>
+      <Table striped bordered hover size="lg" className="container my-5">
+        <thead>
+          <tr>
+            <th>mission</th>
+            <th>description</th>
+            <th>dtatus</th>
+          </tr>
+        </thead>
+        <tbody>
+          {missions.map((mission) => (
+            <tr key={mission.id}>
+              <td>{mission.name}</td>
+              <td>{mission.description}</td>
+              <td>
+                {!mission.canceled ? (
+                  <div className="btns">
+                    <tr className="d-flex">
+                      <button
+                        type="button"
+                        className="btn btn-secondary text-white py-3"
+                      >
+                        NOT A MEMBER
+                      </button>
+                      <button
+                        id={mission.id}
+                        onClick={handleJoinMission}
+                        type="button"
+                        className="btn btn-outline-dark ms-3 py-3"
+                      >
+                        Join Mission
+                      </button>
+                    </tr>
+                  </div>
+                ) : (
+                  <div className="btns">
+                    <tr className="d-flex">
+                      <button type="button" className="btn btn-info text-white py-3">
+                        Active Member
+                      </button>
+                      <button
+                        id={mission.id}
+                        onClick={handleJoinMission}
+                        type="button"
+                        className="btn btn-outline-danger ms-3 px-3"
+                      >
+                        Leave Mission
+                      </button>
+                    </tr>
+                  </div>
+                )}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </Table>
+    </Container>
+  );
+}
+
+export default Mission;
