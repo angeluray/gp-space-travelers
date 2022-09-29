@@ -53,8 +53,7 @@ To get a local copy up and running follow these simple steps.
 - **Linters Check**
 
 ## 🌎 Live Demo:
-- [Space Traveler's Hub]()
-> The live demo link will be available after got the complete project approve.
+- [Space Traveler's Hub](https://darling-baklava-e2b8d5.netlify.app/)
 
 ## Authors 
 
