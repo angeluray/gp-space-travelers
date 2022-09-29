@@ -1,1 +1,31 @@
-/* Reminder to add the styles here */
+.logo {
+  width: 80px;
+}
+
+.ps-3 {
+  font-size: 2.8rem;
+}
+
+.link {
+  font-size: 18px;
+}
+
+.content {
+  padding-top: 0px !important;
+}
+
+#mylink3 {
+  border-left: 1px solid rgba(0, 0, 0, 0.378);
+  border-top: 25px;
+  padding-left: 15px;
+}
+
+.rocket-img {
+  width: 300px;
+  height: 250px;
+}
+  
+.reserved {
+  margin-right: 7px;
+  background-color: #20a2b6 !important;
+}
