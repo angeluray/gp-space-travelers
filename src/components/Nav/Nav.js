@@ -37,7 +37,7 @@ function Navigation() {
       <Container>
         <Navbar.Brand href="#home" className="d-flex">
           <img src={Logo} alt="Logo" className="logo" />
-          <h2 className="ps-3">Space-Travelers-Hub</h2>
+          <h2 className="ps-3">Space Travelers&apos; Hub</h2>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -45,7 +45,7 @@ function Navigation() {
             {links.map((nlink) => (
             // eslint-disable-next-line
            <Nav.Link href={nlink.href}>
-             <NavLink style={activeLink} className="text-primary link" to={nlink.path}>{nlink.Text}</NavLink>
+             <NavLink style={activeLink} id={`mylink${nlink.id}`} className="text-primary link" to={nlink.path}>{nlink.Text}</NavLink>
            </Nav.Link>
             ))}
           </Nav>
