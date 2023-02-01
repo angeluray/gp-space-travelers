@@ -55,6 +55,13 @@ To get a local copy up and running follow these simple steps.
 ## 🌎 Live Demo:
 - [Space Traveler's Hub](https://darling-baklava-e2b8d5.netlify.app/)
 
+## Visual representation
+
+![space-travelers-tablet](https://user-images.githubusercontent.com/97189760/216182765-ba3b39e8-f0a7-46e6-a95e-5f9095039ae7.png)
+![space-travelers-missions](https://user-images.githubusercontent.com/97189760/216182797-ca92067c-d766-4318-bab3-94f09cfcd329.png)
+![space-travelers-profile](https://user-images.githubusercontent.com/97189760/216182837-8840df38-6752-4da1-8307-5cde07958c6b.png)
+
+
 ## Authors 
 
 ### 👤 Angel Uray
