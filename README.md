@@ -1,4 +1,4 @@
-![Microverse](https://img.shields.io/badge/Microverse-blueviolet) ![CSS](https://img.shields.io/badge/-CSS-blue) ![JavaScript](https://img.shields.io/badge/-JavaScript-yellow) ![React](https://img.shields.io/badge/-React-blue) ![Redux](https://img.shields.io/badge/-React-purple)
+![CSS](https://img.shields.io/badge/-CSS-blue) ![JavaScript](https://img.shields.io/badge/-JavaScript-yellow) ![React](https://img.shields.io/badge/-React-blue) ![Redux](https://img.shields.io/badge/-React-purple)
 
 # [Space Traveler's Hub](https://github.com/microverseinc/curriculum-react-redux/blob/main/group-project/project_space_travelers_hub.md)
 
